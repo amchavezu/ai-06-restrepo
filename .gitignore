@@ -23,3 +23,4 @@ paper/*.txt
 
 # Local rendering and analysis scratch files
 tmp/
+__pycache__/
