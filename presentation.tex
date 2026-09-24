@@ -337,27 +337,40 @@
 
   \textbf{Required check:} \texttt{python3 scripts/paper\_contribution.py check AR18RaceManMachine --fast}
 
-  % LEAN_STATUS_PLACEHOLDER: replace with the exact generated status and check result.
+  \medskip
+  \textbf{Run status:} partially formalized. Proposition 1 and Corollary 1 have
+  source-facing Specs; both proof endpoints contain explicit \texttt{sorry}.
+
+  \textbf{Check status:} exit 1. The bounded run reached dependency 173/2505,
+  but no paper module, because the pinned Mathlib checkout had no usable binary cache.
   \source{AppliedModelingLib paper-formalization workflow}
 \end{frame}
 
-\begin{frame}[fragile]{Required Lean slide: source claim, statement, and proof}
-  \textbf{Original mathematical claim}
+\begin{frame}[fragile]{Proposition 1: source claim, Lean Spec, open proof}
+  \textbf{Original claim under Assumptions 1--3}
   \[
-    \text{Selected equation or proposition will be inserted from the generated paper folder.}
+    (\exists! E,\ \mathrm{StaticEq}(D,E))
+    \;\land\;
+    \forall E,\ \mathrm{StaticEq}(D,E)\Rightarrow \mathrm{Eq12}(D,E).
   \]
 
-  \textbf{Lean statement and proof fragment}
+  \textbf{Lean statement (ASCII rendering) and exact proof endpoint}
   \begin{lstlisting}
--- LEAN_CODE_PLACEHOLDER
--- Replace only with exact generated code from AR18RaceManMachine.
+def proposition1_static_equilibriumSpec (D : StaticModel) : Prop :=
+  StaticEnvironment D -> Assumption1 D -> Assumption2 D ->
+    Assumption3 D ->
+    And (ExistsUnique fun E : StaticOutcome => StaticEquilibrium D E)
+      (forall E : StaticOutcome,
+        StaticEquilibrium D E -> Equation12Output D E)
+
+theorem proposition1_static_equilibrium (D : StaticModel) :
+    proposition1_static_equilibriumSpec D := by
+  sorry
   \end{lstlisting}
 
-  \textbf{What Lean verifies}
-
-  The final version will name the exact \texttt{Spec}, identify the assumptions and conclusion, explain one nontrivial proof line, and state whether the source claim is exact or conditional.
-
-  % LEAN_SLIDE_PLACEHOLDER: patch from the completed own run and report exact build/check result.
+  \textbf{My reading:} \texttt{ExistsUnique} encodes existence and uniqueness;
+  the second conjunct applies equation (12) to every equilibrium. The source-facing
+  statement is explicit, but \texttt{sorry} means Lean has not verified its proof.
 \end{frame}
 
 \begin{frame}{Where I did not believe the AI}

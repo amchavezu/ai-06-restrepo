@@ -102,3 +102,30 @@ Evaluate, without presenting the result as a calibration, the exact Proposition 
 ```text
 The reproducible calculation is in analysis/wage_decomposition.py and analysis/wage_decomposition.csv. With B=R=1, hat_sigma=1.5, labor share 0.6, labor-supply elasticity 0.5, and Lambda_I=2, the displacement term is 0.4 and the break-even effective cost ratio is 1.5625. This is an illustration of the sign condition, not an empirical calibration.
 ```
+
+## 5. Formalization-agent result
+
+### Agent answer
+
+```text
+Completed an honest partial formalization of the pinned June 2017 NBER paper.
+
+Implemented the static model and equilibrium equations (6), (8)--(12),
+Assumptions 1--3, source-facing Specs for Proposition 1 and Corollary 1,
+and explicit sorry proof endpoints for both results. A source-only pass covered
+all 7,877 extracted lines and recorded every named result and source ambiguity.
+
+The required command was attempted exactly from the AppliedModelingLib root:
+
+python3 scripts/paper_contribution.py check AR18RaceManMachine --fast
+
+It exited 1 after a bounded approximately ten-minute attempt. Dependency
+compilation reached 173/2505 but no paper module. The pinned Mathlib checkout
+had no usable binary cache, and cache acquisition did not complete on the
+Windows-mounted WSL filesystem. Therefore neither the paper build nor the fast
+check is claimed to pass.
+
+Complete output is preserved in audit/fast_check_attempt.txt and the machine
+summary in audit/build_check_status.json. All later named results remain
+inventoried but unformalized rather than being hidden behind assumptions.
+```

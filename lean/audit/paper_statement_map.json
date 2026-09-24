@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "paper": "AR18RaceManMachine",
+  "source_url": "https://www.nber.org/papers/w22252",
+  "source_version": "NBER Working Paper 22252, revised June 2017",
+  "source_artifact_path": "source.txt",
+  "source_artifact_sha256": "c7ecd631d13366894f6970c50fdafbe073028e3e6d73bd64bde8c66ea742f5cd",
+  "source_inventory_kind": "complete_source_only_named_theory_inventory_pending_semantic_review",
+  "source_curated": true,
+  "seed_scaffold": false,
+  "source_coverage_mode": "named_theoretical_statements",
+  "items": {
+    "static_environment": {
+      "statement": "Sections 2.1--2.2 define the static production environment and its equilibrium through equations (1)--(11).",
+      "source_kind": "model",
+      "source_location": "source.txt:294-611",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "static_equilibrium": {
+      "statement": "A static equilibrium consists of factor prices, threshold tasks, output, market clearing, the ideal price index, and labor supply equations (6), (8)--(11).",
+      "source_kind": "definition",
+      "source_location": "source.txt:563-611",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "dynamic_equilibrium_model": {
+      "statement": "Section 3 defines the dynamic equilibrium with exogenous technological change.",
+      "source_kind": "definition",
+      "source_location": "source.txt:1025-1227",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "balanced_growth_path": {
+      "statement": "A balanced growth path is an equilibrium path on which normalized variables remain constant.",
+      "source_kind": "definition",
+      "source_location": "source.txt:1229-1230",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "endogenous_technology_equilibrium": {
+      "statement": "Section 4 defines the endogenous-technology equilibrium and its balanced-growth specialization.",
+      "source_kind": "definition",
+      "source_location": "source.txt:1420-1744",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "heterogeneous_skills_model": {
+      "statement": "Section 5 defines the heterogeneous-skills task-allocation model.",
+      "source_kind": "model",
+      "source_location": "source.txt:1895-1995",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "creative_destruction_model": {
+      "statement": "Section 6 defines the creative-destruction-of-profits model.",
+      "source_kind": "model",
+      "source_location": "source.txt:2034-2108",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "quasi_labor_supply_model": {
+      "statement": "Section 7 introduces the quasi-labor-supply constraint used for the welfare result.",
+      "source_kind": "model",
+      "source_location": "source.txt:2170-2187",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "appendix_general_model": {
+      "statement": "Appendix A defines the general production and equilibrium system (A1)--(A4).",
+      "source_kind": "model",
+      "source_location": "source.txt:2368-2567",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "new_tasks_use_capital_model": {
+      "statement": "Appendix B defines the extension in which new tasks also use capital.",
+      "source_kind": "model",
+      "source_location": "source.txt:7533-7637",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true
+    },
+    "assumption1": {"statement": "Labor productivity gamma(i) is strictly increasing.", "source_kind": "assumption", "source_location": "source.txt:378", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "assumption2": {"statement": "Either eta tends to zero or zeta equals one.", "source_kind": "assumption", "source_location": "source.txt:406-410", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "assumption3": {"statement": "For K_bar such that R equals W divided by gamma(N), K is below K_bar.", "source_kind": "assumption", "source_location": "source.txt:498-504", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "assumption1_prime": {"statement": "The dynamic productivity schedule has the stated exponential form.", "source_kind": "assumption", "source_location": "source.txt:1050-1053", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "assumption4": {"statement": "The effective elasticity exceeds zeta.", "source_kind": "assumption", "source_location": "source.txt:1627", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "assumption1_double_prime": {"statement": "The heterogeneous-skills model satisfies the displayed distributional restrictions.", "source_kind": "assumption", "source_location": "source.txt:1961-1967", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "assumption2_prime": {"statement": "The Appendix A general model satisfies the displayed non-homotheticity restriction.", "source_kind": "assumption", "source_location": "source.txt:2373-2378", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "assumption2_double_prime": {"statement": "The new-tasks-use-capital extension satisfies the displayed restriction.", "source_kind": "assumption", "source_location": "source.txt:7634-7637", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "proposition1": {
+      "statement": "Under Assumptions 1--3, a unique static equilibrium exists and aggregate output satisfies equation (12).",
+      "source_kind": "proposition",
+      "source_location": "source.txt:613-643",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true,
+      "spec_lean_declarations": ["proposition1_static_equilibriumSpec"],
+      "proof_lean_declarations": ["proposition1_static_equilibrium"]
+    },
+    "corollary1": {
+      "statement": "When sigma=zeta=1 and gamma is identically one, output has the displayed Cobb--Douglas form.",
+      "source_kind": "corollary",
+      "source_location": "source.txt:708-715",
+      "source_url": "https://www.nber.org/papers/w22252",
+      "claim_bearing": true,
+      "spec_lean_declarations": ["corollary1_cobb_douglas_outputSpec"],
+      "proof_lean_declarations": ["corollary1_cobb_douglas_output"]
+    },
+    "proposition2": {"statement": "Comparative statics for automation, new tasks, capital, labor share, and employment.", "source_kind": "proposition", "source_location": "source.txt:718-817", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "proposition3": {"statement": "Impact of technology on productivity, wages, and factor prices.", "source_kind": "proposition", "source_location": "source.txt:849-959", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "proposition4": {"statement": "Dynamic equilibrium with exogenous technological change.", "source_kind": "proposition", "source_location": "source.txt:1269-1294", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "proposition5": {"statement": "Long-run comparative statics.", "source_kind": "proposition", "source_location": "source.txt:1347-1353", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "proposition6": {"statement": "Equilibrium with endogenous technological change.", "source_kind": "proposition", "source_location": "source.txt:1748-1767", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "corollary2": {"statement": "The stated endogenous-technology dynamics are locally stable under the corollary's condition.", "source_kind": "corollary", "source_location": "source.txt:1852-1853", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "proposition7": {"statement": "Automation, new tasks, and inequality in the heterogeneous-skills model.", "source_kind": "proposition", "source_location": "source.txt:1996-2010", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "proposition8": {"statement": "Equilibrium with creative destruction.", "source_kind": "proposition", "source_location": "source.txt:2114-2119", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "proposition9": {"statement": "Welfare implications of automation and new tasks.", "source_kind": "proposition", "source_location": "source.txt:2188-2271", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "lemmaA1": {"statement": "Under Assumption 2 prime, omega is decreasing in I-star and increasing in N.", "source_kind": "lemma", "source_location": "source.txt:2642", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "lemmaA2": {"statement": "Derivation of Figure 4.", "source_kind": "lemma", "source_location": "source.txt:2729-2749", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "lemmaA3": {"statement": "Asymptotic behavior of the normalized value functions.", "source_kind": "lemma", "source_location": "source.txt:3172-3190", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "propositionB1": {"statement": "Comparative statics in the general model.", "source_kind": "proposition", "source_location": "source.txt:5278-5391", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "lemmaB1": {"statement": "Inada conditions.", "source_kind": "lemma", "source_location": "source.txt:5777-5787", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "propositionB2": {"statement": "Welfare implications of automation in the general model.", "source_kind": "proposition", "source_location": "source.txt:7140-7201", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "propositionB3": {"statement": "Equilibrium in the static model when new tasks also use capital.", "source_kind": "proposition", "source_location": "source.txt:7640-7684", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true},
+    "propositionB4": {"statement": "Equilibrium with endogenous technology when new tasks also use capital.", "source_kind": "proposition", "source_location": "source.txt:7694-7705", "source_url": "https://www.nber.org/papers/w22252", "claim_bearing": true}
+  }
+}
