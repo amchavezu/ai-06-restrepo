@@ -373,7 +373,10 @@ theorem proposition1_static_equilibrium (D : StaticModel) :
   statement is explicit, but \texttt{sorry} means Lean has not verified its proof.
 \end{frame}
 
-\begin{frame}{Where I did not believe the AI}
+\begin{frame}{}
+  \mbox{}\vspace{-0.15cm}
+  {\Large\bfseries\color{navy}Where I did not believe the AI\par}
+  \vspace{0.25cm}
   \textbf{Claim to test}
 
   ``Automation necessarily reduces wages and the labor share.''
@@ -388,14 +391,19 @@ theorem proposition1_static_equilibrium (D : StaticModel) :
   \]
 
   Automation raises the wage when cost savings are large enough. On the interior BGP, capital adjustment makes the long-run wage rise even as employment and the labor share fall.
-
-  \medskip
-  \IfFileExists{hand/wage-derivation.jpg}{%
-    \centering\includegraphics[height=2.0cm]{hand/wage-derivation.jpg}%
-  }{%
-    \colorbox{sand}{\parbox{0.95\textwidth}{\centering\small Owner-supplied photograph still required: \texttt{hand/wage-derivation.jpg}}}%
-  }
   \source{Own hand derivation of Proposition 3; NBER pp. 12--14}
+\end{frame}
+
+\begin{frame}{Hand check: sign condition and numerical threshold}
+  \centering
+  \IfFileExists{hand/wage-derivation.jpg}{%
+    \includegraphics[viewport=0 1378 1940 2756,clip,width=0.48\textwidth]{hand/wage-derivation.jpg}%
+    \hfill
+    \includegraphics[viewport=0 0 1940 1378,clip,width=0.48\textwidth]{hand/wage-derivation.jpg}%
+  }{%
+    \colorbox{sand}{\parbox{0.95\textwidth}{\centering Owner-supplied photograph required.}}%
+  }
+  \source{Owner's handwritten derivation of Proposition 3}
 \end{frame}
 
 \begin{frame}{What the model changes about the automation debate}
