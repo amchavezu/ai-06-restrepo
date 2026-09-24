@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "paper": "AR18RaceManMachine",
+  "checked_at": "2026-09-24T00:00:00Z",
+  "command": "python3 scripts/paper_contribution.py check AR18RaceManMachine --fast",
+  "working_directory": "C:\\Users\\marce\\Documents\\GitHub\\EconCSLib",
+  "execution_environment": "WSL with PYTHONPATH=.",
+  "exit_code": 1,
+  "result": "blocked_before_paper_build",
+  "complete_output_artifact": "audit/fast_check_attempt.txt",
+  "last_progress": "173/2505 dependencies built",
+  "paper_modules_reached": false,
+  "blocker": "The exact pinned Mathlib checkout has no binary cache. Cache acquisition itself did not complete on the Windows-mounted WSL filesystem, and source compilation remained far outside the bounded verification window.",
+  "proof_status": "Proposition 1 and Corollary 1 endpoints contain explicit sorry; all later named results remain unformalized.",
+  "claims": {
+    "paper_build_passed": false,
+    "fast_check_passed": false,
+    "source_inventory_complete_as_reader_pass": true,
+    "source_map_materialized": false,
+    "v11_semantic_review_complete": false
+  }
+}

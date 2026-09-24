@@ -1,103 +1,97 @@
-# Repository 1 — Aouad, Lykouris & Zhong (2026)
+# Repository 6 - Acemoglu & Restrepo (2018)
 
-*Human-AI Productivity Paradoxes: Modeling the Interplay of Skill, Effort, and AI Assistance*
-[arXiv:2605.11350](https://arxiv.org/abs/2605.11350) · [cs.GT]
+**Daron Acemoglu and Pascual Restrepo.** *The Race between Man and Machine: Implications of Technology for Growth, Factor Shares, and Employment.* American Economic Review 108(6), 1488-1542.
 
-> **This is the worked example** for *Artificial Intelligence and Economic
-> Modeling* (UP 2026-II). It shows what a weekly repository looks like when it is
-> done well. Yours does not have to be this long — see "What is required" below.
+[NBER working paper 22252](https://www.nber.org/papers/w22252) · [Published article](https://doi.org/10.1257/aer.20160696) · [Course issue](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/5)
 
----
+This repository reads the NBER version revised in June 2017. The Lean workflow uses the same version. The NBER title puts “Machine” before “Man,” and its proposition pagination differs from the AER article.
 
-## What question the paper answers
+## The question
 
-When does AI assistance make a worker **less** productive?
+**PAPER.** Can automation make labor redundant, or do price responses and the creation of new labor-intensive tasks generate a self-correcting race between the two technologies?
 
-The paper picks one mechanism and pushes it: AI is a **perfectly substitutable
-input**. Skill $s$, effort $e$ and assistance $a$ enter production only through
-their sum, $x = s + e + a$. Nothing else is going on — no learning, no
-complementarity, no contracting. Everything that follows comes from that single
-modelling choice plus a linear cost of effort.
+The paper replaces a two-factor production function with a continuum of tasks. Automation changes which tasks capital can perform. Reinstatement creates new tasks in which labor has a comparative advantage. This distinction lets productivity, wages, employment, and the labor share move in different directions.
 
-## The agent's problem
+## The agents' problems
 
-$$\max_{e \ge 0}\; p(s+e+a) - \gamma e$$
+Final output combines a unit measure of tasks, indexed by $i\in[N-1,N]$:
 
-with $p$ weakly increasing, concave and twice differentiable, $\gamma > 0$, and
-one constraint that turns out to carry the whole result: $e \ge 0$.
+\[
+Y=\widetilde B\left(\int_{N-1}^{N}y(i)^{\frac{\sigma-1}{\sigma}}\,di\right)^{\frac{\sigma}{\sigma-1}}.
+\]
 
-## The main result, with all its conditions
+All tasks can use labor. Tasks $i\le I$ can also use capital. A competitive task producer chooses the cheaper effective input, so its unit cost is
 
-Let $x^{*}$ be the **largest** maximiser of $p(x) - \gamma x$:
+\[
+p(i)=
+\begin{cases}
+\min\{R,W/\gamma(i)\}^{1-\eta}, & i\le I,\\
+(W/\gamma(i))^{1-\eta}, & i>I.
+\end{cases}
+\]
 
-$$x^{*} = \max \arg\max_{x} \left[\, p(x) - \gamma x \,\right]$$
+**PAPER.** Assumption 1 makes $\gamma(i)$ strictly increasing, so labor has comparative advantage in higher-index tasks. The cost threshold $\widetilde I$ solves $W/R=\gamma(\widetilde I)$, and the equilibrium automation threshold is
 
-This requires a **regularity condition**, without which $x^{*}$ need not exist:
+\[
+I^*=\min\{I,\widetilde I\}.
+\]
 
-$$\limsup_{x \to \infty} \frac{p(x)}{x} < \gamma$$
+Capital performs tasks below $I^*$; labor performs tasks above it. In the endogenous-technology model, scientists choose between automation and new-task research. An interior balanced growth path requires equal innovation returns,
 
-**Proposition 2.1.** Under those conditions,
+\[
+\kappa_I v_I(n)=\kappa_N v_N(n), \qquad n=N-I.
+\]
 
-$$e^{*}(s,a) = \left(x^{*} - s - a\right)_{+}, \qquad
-  p^{*}(s,a) = \max\left\{ p(x^{*}),\, p(s+a) \right\}$$
+## Main result and all conditions
 
-*Intuition in one sentence:* the agent has a single target level of total input,
-tops it up with effort, and once skill plus AI already reach it he stops working.
+**PAPER, Proposition 6.** Impose:
 
-Two things worth noticing about the proof. It is a **case split** — interior
-versus corner — and contains **no differentiation at all**; and the largest-argmax
-tie-break is not decoration, it is what makes $e^{*}$ well defined when
-$p(x)-\gamma x$ has a flat maximum.
+- Assumption 1': $\gamma(i)=e^{Ai}$ with $A>0$;
+- Assumption 2: either $\eta\to0$ or $\zeta=1$, which delivers the paper's closed-form homothetic factor demands;
+- Assumption 4: $\widehat\sigma>\zeta$, so innovations that use the cheaper factor have positive value; and
+- a sufficiently small scientist supply, $S<\overline S$, so growth is not too high and the local value-function approximation is valid.
 
-## Sections 3–5: stated, not derived
+Let $\overline\rho=B-\delta-\theta g$. When $\rho<\overline\rho$, there is a full-automation BGP with $n=0$ and every task produced by capital. When $\rho>\overline\rho$, every BGP has $n>\overline n(\rho)$, and there are thresholds $\overline\kappa\ge\underline\kappa>0$:
 
-The three headline results — the deskilling paradox, the unreliability paradox
-and skill polarisation — use machinery well beyond Section 2: a continuous-time
-birth–death Markov chain and its steady state, Arrow–Pratt risk aversion applied
-to a *production* function with IARA/DARA driving the sign, and Bayesian updating
-over a binary signal. They are worth understanding; they are not worth trying to
-reproduce in a week. See `extra/tutorial-alz-completo.pdf` for the full walk.
+\[
+\begin{array}{ccl}
+\kappa_I/\kappa_N>\overline\kappa
+&\Rightarrow& \text{a unique interior BGP},\\
+\underline\kappa<\kappa_I/\kappa_N<\overline\kappa
+&\Rightarrow& \text{multiple BGPs},\\
+\kappa_I/\kappa_N<\underline\kappa
+&\Rightarrow& \text{a unique no-automation BGP with }n=1.
+\end{array}
+\]
 
----
+At the unique interior BGP, $n\in(\overline n(\rho),1)$ and $\kappa_Iv_I(n)=\kappa_Nv_N(n)$. If $\theta=0$, the equilibrium is globally saddle-path stable. If $\theta>0$, it is locally unique and asymptotically saddle-path stable.
 
-## What is in this repository
+**INTERPRETATION.** Stability comes from factor prices. More automation lowers the value of further automation and encourages new tasks; more reinstatement makes automation relatively attractive. The force is self-correcting only inside the interior region. Parameter changes can still move the economy to full automation, and a permanent rise in $\kappa_I/\kappa_N$ lowers the BGP values of $n$, employment, and the labor share.
 
-| File | What it is |
+## Does automation necessarily reduce wages?
+
+No. In the static, technology-constrained region $I^*=I<\widetilde I$, Proposition 3 decomposes the wage response to marginal automation into productivity and displacement:
+
+\[
+\frac{d\ln W}{dI}
+=
+\underbrace{\frac{B^{\widehat\sigma-1}}{1-\widehat\sigma}
+\left[\left(\frac{W}{\gamma(I^*)}\right)^{1-\widehat\sigma}-R^{1-\widehat\sigma}\right]}_{\text{productivity effect}}
+-
+\underbrace{(1-s_L)\frac{\Lambda_I}{\widehat\sigma+\varepsilon_L}}_{\text{displacement effect}}.
+\]
+
+**DERIVATION.** Automation raises the wage exactly when the first term exceeds the second. Equivalently, the cost saving from replacing labor at the marginal task is large enough to offset the loss of labor's task range. The paper proves that there is a capital threshold $\overline K>K$: wages rise for $K<\overline K$ and fall for $K>\overline K$. In the long run, on the interior BGP with $n>\overline n(\rho)$, capital accumulation pins down $R$, so more automation raises the long-run wage even while employment and the labor share fall.
+
+## Repository contents
+
+| Path | Contents |
 |---|---|
-| `README.md` | This page |
-| `prompts.md` | The full LLM conversation, unedited |
-| `extensions.md` | Which assumptions could be relaxed, and which are dead ends |
-| `hand/` | The derivation of Proposition 2.1, written out by hand |
-| `presentation.tex` / `.pdf` | The 5-minute Beamer deck |
-| `paper/` | The article itself |
-| `extra/` | Above the floor: a full tutorial of the paper and two lecture decks |
+| `prompts.md` | Raw prompts and relevant agent responses |
+| `hand/` | Hand derivation and its short description |
+| `presentation.tex` / `presentation.pdf` | 20-minute Beamer presentation |
+| `analysis/` | Reproducible analytical and computational checks |
+| `lean/` | Complete `AR18RaceManMachine` output copied from this repository's own AppliedModelingLib run |
+| `lean-check.txt` | Recorded paper-scoped workflow check |
+| `paper/README.md` | Exact source version and local retrieval instructions |
 
-## What is required
-
-Only four things. The rest of this repository is above the floor.
-
-1. **`README.md`** — one page: the question, the agent's problem, the main result
-   **with all its conditions**.
-2. **`prompts.md`** — your prompts and the answers, **raw**. Do not tidy them up:
-   the value is in seeing where the model went wrong.
-3. **`hand/`** — at least one photograph of something you derived by hand. Not the
-   whole paper: the one step you did not believe until you did it yourself.
-4. **`presentation.tex` / `.pdf`** — the 5-minute deck, source and compiled.
-
-Deadline is **Thursday 22:00**, work merged into `main` through a pull request,
-and the repository URL posted as a comment on that week's issue.
-
-## About `hand/`
-
-`hand/prop-2-1-derivacion-a-mano.pdf` is three phone photos of a notebook page.
-That is exactly the standard: crooked, with crossings-out, no transcription. What
-it shows is the first-order condition and the interior-versus-corner split written
-out step by step — the part I did not want to take on trust.
-
-## About the LLM conversation
-
-`prompts.md` is the export of the session that produced the tutorial in `extra/`.
-Read it for what it gets wrong as much as for what it gets right. The episode
-worth studying is on slide 4 of the presentation: asked for "the most natural
-extension", the model confidently proposed relaxing the linear cost — which the
-authors had already done in Appendix D. It took opening the appendix to find out.

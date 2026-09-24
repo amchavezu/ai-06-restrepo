@@ -5,6 +5,7 @@
 *.toc
 *.nav
 *.snm
+*.vrb
 *.synctex.gz
 *.fls
 *.fdb_latexmk
@@ -18,3 +19,8 @@ DNI*
 
 # The article itself: third-party PDF, fetch it from arXiv
 paper/*.pdf
+paper/*.txt
+
+# Local rendering and analysis scratch files
+tmp/
+__pycache__/

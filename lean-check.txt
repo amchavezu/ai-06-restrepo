@@ -1,0 +1,23 @@
+AR18RaceManMachine paper-scoped check
+Date: 2026-09-24
+AppliedModelingLib root: C:\Users\marce\Documents\GitHub\EconCSLib
+Command: python3 scripts/paper_contribution.py check AR18RaceManMachine --fast
+Environment: WSL from the repository root with PYTHONPATH=.
+Exit code: 1
+Result: BLOCKED BEFORE PAPER BUILD
+
+The exact pinned Mathlib checkout had no usable binary cache. The bounded
+approximately ten-minute attempt was manually interrupted while dependency
+compilation was still making progress at 173/2505; no AR18RaceManMachine paper
+module had yet been reached. This is not a successful check and does not claim
+that the paper files compile.
+
+The generated formalization remains honestly partial: Proposition 1 and
+Corollary 1 have source-facing Specs but their proof endpoints contain explicit
+`sorry`; all later named results remain inventoried but unformalized.
+
+Complete combined stdout/stderr and the machine-readable disposition are
+preserved exactly as generated in:
+
+  lean/audit/fast_check_attempt.txt
+  lean/audit/build_check_status.json

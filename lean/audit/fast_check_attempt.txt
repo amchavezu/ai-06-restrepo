@@ -1,0 +1,32 @@
+AR18RaceManMachine paper-scoped fast-check attempt
+Date: 2026-09-24
+Working directory: C:\Users\marce\Documents\GitHub\EconCSLib
+Execution environment: WSL, repository root, PYTHONPATH=.
+Command: python3 scripts/paper_contribution.py check AR18RaceManMachine --fast
+Exit code: 1
+Disposition: manually interrupted at the documented bounded verification boundary after approximately ten minutes because the exact pinned Mathlib checkout had no binary cache. The build was still making progress (173/2505) and had not reached a paper module. This is an environment/build-cache blocker, not a successful check and not evidence that the paper files compile.
+
+Complete combined stdout/stderr captured from this exact final attempt:
+
++ lake build +AR18RaceManMachine.PaperInterface
+✔ [33/208] Built Batteries.Util.ExtendedBinder (233s)
+✔ [48/209] Built Batteries.Lean.Syntax (234s)
+✔ [66/215] Built Batteries.Lean.NameMapAttribute (244s)
+✔ [71/218] Built Batteries.Lean.MonadBacktrack (219s)
+✔ [78/226] Built Batteries.Tactic.Lint.TypeClass (267s)
+✔ [87/278] Built Mathlib.Tactic.Linter.DirectoryDependency (317s)
+✔ [88/281] Built Batteries.Tactic.OpenPrivate (313s)
+✔ [90/281] Built Batteries.Tactic.Lint.Frontend (315s)
+✔ [91/299] Built Batteries.Tactic.Trans (316s)
+✔ [93/308] Built Batteries.Tactic.HelpCmd (319s)
+✔ [96/381] Built Batteries.Logic (326s)
+✔ [97/396] Built Batteries.Data.UInt (315s)
+✔ [129/410] Built Batteries.Lean.PersistentHashSet (234s)
+✔ [135/410] Built Batteries.Lean.Meta.UnusedNames (240s)
+✔ [145/503] Built Batteries.Tactic.PermuteGoals (296s)
+✔ [152/563] Built Batteries.Lean.Meta.SavedState (254s)
+✔ [154/605] Built Batteries.Lean.Meta.InstantiateMVars (256s)
+✔ [155/653] Built Batteries.Lean.Meta.DiscrTree (259s)
+✔ [173/2505] Built Batteries.Data.BinomialHeap.Basic (389s)
+
+No further stdout/stderr was emitted before interruption.
